@@ -1,3 +1,8 @@
+import WindowsAudit
+import CVESearch
+import IPLocator
+import LinkedinScrapper
+
 ### HEADER ###
 
 header = r"""
@@ -16,7 +21,30 @@ header = r"""
 
 print(header)
 
-# ...do...
+menu = r"""
+1) Windows audit
+2) CVE search
+3) IP locator
+4) Linkedin scrapper
+5) Exit
+
+Please choose a program to launch : 
+"""
+
+action = input(menu)
+
+print('')
+
+if action == '1':
+    WindowsAudit.startProgram()
+elif action == '2':
+    CVESearch.startProgram()
+elif action == '3':
+    IPLocator.startProgram()
+elif action == '4':
+    LinkedinScrapper.startProgram()
+else:
+    exit()
 
 footer = r"""
 
