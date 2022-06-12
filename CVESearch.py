@@ -41,6 +41,7 @@ def OutputToCsv(dataframe):
     else: 
         return
 
-file = DownloadCVEData()
-dataframe = SearchCvePandas(file)
-OutputToCsv(dataframe)
+def startProgram():
+    file = DownloadCVEData()
+    dataframe = SearchCvePandas(file)
+    OutputToCsv(dataframe)

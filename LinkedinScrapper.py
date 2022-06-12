@@ -77,7 +77,7 @@ def Login(email, password):
     login_csrf = re.findall(r'name="loginCsrfParam" value="(.*?)"', anon_response.text)
 
     if email == '':
-        email = input('\nWhat is your Linkedin email (Your account might have 10+ relations) : \n')
+        email = input('What is your Linkedin email (Your account might have 10+ relations) : \n')
 
     if password == '':
         password = getpass('Enter your password : \n')
@@ -221,7 +221,8 @@ def RetreiveEmployeesInformations(session, employees_counter,company_id,output):
 
     print("\nIf there are a lot of blank names, it might be because your account is not old enough or doesn't have enough relations. In this case, Linkedin will keep people profile private just for you.\nIn this case, you should use another account because link to profile will not work aswell.\n")
 
-email, password, input_name, employees_counter, output = CheckArguments()
-session = Login(email, password)
-company_id = RetreiveCompanyInformations(session, input_name)
-RetreiveEmployeesInformations(session, employees_counter, company_id, output)
+def startProgram():
+    email, password, input_name, employees_counter, output = CheckArguments()
+    session = Login(email, password)
+    company_id = RetreiveCompanyInformations(session, input_name)
+    RetreiveEmployeesInformations(session, employees_counter, company_id, output)

@@ -109,18 +109,19 @@ def CheckRealTimeMonitoring():
     else:
         return 'Not found (Default value : False)'
 
-if CheckOs() == "Windows":
-    if CheckIfRoot():
-        print('SMBv1 Support : ' + CheckSMBv1Support())
-        print('Store passwords using reversible encryption : ' + CheckStorePasswordUsingReversibleEncryption())
-        print('BitLocker Drive Encryption: Volume status : ' + CheckBitlockerStatus())
-    else: 
-        print("User not admin, skipping SMBv1 Support, Store passwords using reversible encryption and BitLocker Drive Encryption: Volume status.")
-    print('Network security: Do not store LAN Manager hash value on next password change : ' + CheckStoreLMHashValue())
-    print('Point and Print Restrictions: When installing drivers for a new connection (CVE-2021-34527) : ' + CheckPrinterDriverNewConnectionCVE202134527())
-    print('Point and Print Restrictions: When updating drivers for an existing connection (CVE-2021-34527) : ' + CheckPrinterDriverExistingConnectionCVE202134527())
-    print('WDigest Authentication : ' + CheckWDigestAuthentication())
-    print('Real time monitoring : ' + CheckRealTimeMonitoring())
+def startProgram():
+    if CheckOs() == "Windows":
+        if CheckIfRoot():
+            print('SMBv1 Support : ' + CheckSMBv1Support())
+            print('Store passwords using reversible encryption : ' + CheckStorePasswordUsingReversibleEncryption())
+            print('BitLocker Drive Encryption: Volume status : ' + CheckBitlockerStatus())
+        else: 
+            print("User not admin, skipping SMBv1 Support, Store passwords using reversible encryption and BitLocker Drive Encryption: Volume status.")
+        print('Network security: Do not store LAN Manager hash value on next password change : ' + CheckStoreLMHashValue())
+        print('Point and Print Restrictions: When installing drivers for a new connection (CVE-2021-34527) : ' + CheckPrinterDriverNewConnectionCVE202134527())
+        print('Point and Print Restrictions: When updating drivers for an existing connection (CVE-2021-34527) : ' + CheckPrinterDriverExistingConnectionCVE202134527())
+        print('WDigest Authentication : ' + CheckWDigestAuthentication())
+        print('Real time monitoring : ' + CheckRealTimeMonitoring())
 
-else:
-    print('This program is only available on Windows.')
+    else:
+        print('This program is only available on Windows.')
