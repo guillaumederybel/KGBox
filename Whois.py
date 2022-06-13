@@ -73,5 +73,3 @@ def startProgram():
         outputToCsv(domain_info)
     else:
         pass
-
-startProgram()
