@@ -2,6 +2,7 @@ import WindowsAudit
 import CVESearch
 import IPLocator
 import LinkedinScrapper
+import Whois
 
 ### HEADER ###
 
@@ -26,7 +27,8 @@ menu = r"""
 2) CVE search
 3) IP locator
 4) Linkedin scrapper
-5) Exit
+5) Whois
+6) Exit
 
 Please choose a program to launch : 
 """
@@ -43,6 +45,8 @@ elif action == '3':
     IPLocator.startProgram()
 elif action == '4':
     LinkedinScrapper.startProgram()
+elif action == '5':
+    Whois.startProgram()
 else:
     exit()
 
