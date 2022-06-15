@@ -14,6 +14,15 @@ We developed 5 tools for this project:
 Whois, IPLocator and LinkedinScrapper are OSINT tools, while CVEsearch and WindowsAudit are security tools.
 We oriented our toolbox to output results to csv files, for further use.
 
+We use 3 not installed python librairies : 
+- requests
+- pandas
+- python-whois
+
+You can install them easily by typing : 
+
+	pip install -r requirements.txt
+
 ___
 
 ## LinkedinScrapper
